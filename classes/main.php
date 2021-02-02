@@ -40,7 +40,7 @@ class Main {
 	 * @since  1.0.0
 	 */
 	protected function __construct() {
-		add_action( 'admin_bar_menu', array( $this, 'admin_bar' ), 9999999 );
+		add_action( 'admin_bar_menu', array( $this, 'admin_bar' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'maybe_output_css' ), 100 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'maybe_output_css' ), 100 );
 	}
@@ -73,7 +73,7 @@ class Main {
 		if( ! $env ){
 			return;
 		}
-	
+
 		$args = array(
 			'id'    => 'pantheon-env-admin-bar',
 			'title' => strtoupper( $env ),
