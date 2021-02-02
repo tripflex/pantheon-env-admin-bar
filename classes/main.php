@@ -68,8 +68,12 @@ class Main {
 	 *
 	 */
 	public function admin_bar( $wp_admin_bar ) {
-		$env = isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ? $_ENV['PANTHEON_ENVIRONMENT'] : 'unknown';
+		$env = isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ? sanitize_text_field( $_ENV['PANTHEON_ENVIRONMENT'] ) : false;
 
+		if( ! $env ){
+			return;
+		}
+	
 		$args = array(
 			'id'    => 'pantheon-env-admin-bar',
 			'title' => strtoupper( $env ),
