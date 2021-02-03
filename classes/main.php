@@ -46,6 +46,16 @@ class Main {
 	}
 
 	/**
+	 * Plugins Loaded
+	 *
+	 * @since @@version
+	 *
+	 */
+	public function plugins_loaded(  ) {
+
+	}
+
+	/**
 	 * Output CSS
 	 *
 	 * @since @@version

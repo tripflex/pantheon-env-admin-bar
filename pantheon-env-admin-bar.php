@@ -42,4 +42,4 @@ function PANTHEON_ENV_ADMIN_BAR() {
 	return Main::get_instance();
 }
 
-add_action( 'plugins_loaded', array( PANTHEON_ENV_ADMIN_BAR(), 'hooks' ) );
+add_action( 'plugins_loaded', array( PANTHEON_ENV_ADMIN_BAR(), 'plugins_loaded' ) );
